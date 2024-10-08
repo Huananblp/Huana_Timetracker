@@ -195,7 +195,7 @@
 
   <!--  ******* Javascript ***********  -->
   <script>
-    var scripturl = 'https://script.google.com/macros/s/AKfycbyS1-iKahnFeh7ocy8mILw2FGwni3h3S4vry9pJTasPMMATZGd0vbEo8qcG-E_9EoGY/exec'
+    var scripturl = 'https://script.google.com/macros/s/AKfycbyvJ7RJbKL12qBkrsybINxcRtp9WbRx4jvuYz3SaXkx1nNWcaacHA0t8Sh3Vop_IbFpbQ/exec'
     var owner = 'องค์การบริหารส่วนตำบลหัวนา';
 
 
@@ -216,7 +216,7 @@
       $('#clockin').click(() => ClockIn())
       $('#clockout').click(() => ClockOut())
       liff.init({
-        liffId: '1660867494-7Lp2vA05',
+        liffId: '2000498666-QpjPNOd6',
         withLoginOnExternalBrowser: true
       })
       liff.ready.then(() => {
@@ -391,6 +391,13 @@
                   lon: gps[1],
                 }
               })
+              // $.ajax({
+              //   method: 'POST',
+              //   url: scripturl,
+              //   data: {
+              //     opt: 'total',
+              //   }
+              // })
 
               setTimeout(() => {
                 var message = res.employee + '<br> บันทึกเวลากลับ ' + res.return_date;
@@ -406,6 +413,21 @@
               clearForm();
             }
 
+            // ar.forEach(function (item, index) {
+
+            //     if (item[0] == 'SUCCESS') {
+            //         var message = item[2] + '<br> บันทึกเวลากลับ ' + item[1];
+            //         $('#message').html(message);
+            //         document.getElementById("message").className = "alert alert-primary";
+            //         clearForm();
+            //     } else {
+            //         var message = item[2] + ' ' + item[0];
+            //         $('#message').html(message);
+            //         document.getElementById("message").className = "alert alert-warning";
+            //         clearForm();
+            //     }
+
+            // });
           }
         })
 
@@ -419,6 +441,11 @@
     }
 
 
+    /** ********* ตำแหน่งทางภูมิศาสตร์ - ละติจูด/ลองจิจูด ******** **/
+    /** Ref. https://stackify.dev/500074-how-geolocation-getcurrentposition-return-value **/
+
+
+    // get Location 
     var geolocation
     function getlocation() {
       if (navigator.geolocation) {
@@ -480,6 +507,16 @@
         dot = document.textContent = '\xa0';
       }
 
+      //var session = "AM";
+
+      // if (h >= 12) {
+      //   h = h - 12;
+      //   session = "PM";
+      //   if (h == 0) {
+      //   h = 12;
+      //   }          
+      // }
+
       h = h < 10 ? "0" + h : h;
       m = m < 10 ? "0" + m : m;
       s = s < 10 ? "0" + s : s;
@@ -499,5 +536,3 @@
   </script>
   <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
 </body>
-
-</html>
