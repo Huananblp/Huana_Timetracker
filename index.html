@@ -176,7 +176,7 @@
 
   <!--  ******* Javascript ***********  -->
   <script>
-    var scripturl ='https://script.google.com/macros/s/AKfycby9VbAlq9ifceRqFbREWEIOdNgU3gKKhLj3JjN4CVoGqzJiVun3F9gms2ThQTmSovo2/exec'
+    var scripturl ='https://script.google.com/macros/s/AKfycbxaGBpYOHstXO9KqlUfmc3JKA4yomAhJjRp4WBh5Xbj2MWRZ-W4xRtHtBJ6w0YmeFCp/exec'
     var owner = 'องค์การบริหารส่วนตำบลหัวนา';
 
 
@@ -191,13 +191,23 @@
       $('#clockin').click(() => ClockIn())
       $('#clockout').click(() => ClockOut())
       liff.init({
-        liffId:'2006435262-Ebxr8BpG',
+        liffId:'1660867494-7Lp2vA05',
         withLoginOnExternalBrowser: true
       })
       liff.ready.then(() => {
-        profile = liff.getDecodedIDToken()
-        initApp()
-      })
+    profile = liff.getDecodedIDToken()
+    console.log(profile);
+        if (profile && profile.name) { // ตรวจสอบว่า profile และ profile.name มีค่า
+            initApp() 
+        } else {
+            $('#message').html('เกิดข้อผิดพลาดในการดึงข้อมูลโปรไฟล์');
+            document.getElementById('message').className = 'alert alert-danger';
+        }
+        }).catch(err => { // เพิ่ม catch() เพื่อดักจับ error
+            console.error(err);
+            $('#message').html('เกิดข้อผิดพลาดในการล็อกอิน');
+            document.getElementById('message').className = 'alert alert-danger';
+        });
 
       function initApp() {
         document.getElementById('message').innerText = owner;
