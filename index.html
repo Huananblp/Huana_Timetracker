@@ -8,53 +8,34 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-  <!-- ****** Auto Complete ********* -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200&family=Prompt:wght@200&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/jquery-ui.autocomplete.scroll@0.1.9/jquery.ui.autocomplete.scroll.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-ui.autocomplete.scroll@0.1.9/jquery.ui.autocomplete.scroll.min.js"></script>
 
   <!-- input#tags { -->
-
-
+  
   <!-- ****** Style CSS ********* -->
   <style>
-    input#employee {
-      width: 282px;
-      height: 60px;
-      background-color: brown;
-      color: yellow;
-      margin-block-start: 5px;
-      border-radius: 36px;
-      font-size: 20px;
-    }
-
     div#showtxt {
       font-size: 27px;
       margin-top: 20px;
     }
 
-    /**
-      #### font digital: http://www.cufonfonts.com #### 
-      #### css @font-face generator : https://transfonter.org/ #### 
-      **/
-
     @font-face {
       font-family: 'Digital dream Fat';
       src: url('https://semicon.github.io/fonts/DigitaldreamFat.woff2') format('woff2'),
-        url('https://semicon.github.io/fonts/DigitaldreamFat.woff') format('woff');
+           url('https://semicon.github.io/fonts/DigitaldreamFat.woff') format('woff');
       font-weight: normal;
       font-style: normal;
       font-display: swap;
     }
 
-    @import url('https://fonts.googleapis.com/css2?family=K2D&family=Kanit&family=Sriracha&display=swap');
+    @import url('https://fonts.googleapis.com/css2family=Kanit:wght@200&family=Prompt:wght@200&display=swap');
 
     * {
       margin: 0px;
@@ -63,24 +44,38 @@
       font-family: 'K2D', sans-serif;
     }
 
-    body {
-      font-size: 1.05rem;
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      background-color: #92a8d1;
-      background: url("https://semicon.github.io/img/bgTimeTracker.jpg") no-repeat center center fixed;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-    }
+ body {
+    font-family: 'Kanit', sans-serif; /* เรียงตามลำดับความสำคัญ */
+    color: #444;
+    background-color: white;
+    padding: 20px;
+    border: 2px solid white;
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.5);
+    font-size: 1.05rem;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: #92a8d1;
+    background: url("https://www.i-pic.info/i/BbiN536436.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+   input#employee {
+     font-family: 'Kanit', sans-serif; /* เรียงตามลำดับความสำคัญ */
+     width: 282px;
+     height: 60px;
+     background-color: brown;
+     color: yellow;
+     margin-block-start: 5px;
+     border-radius: 36px;
+     font-size: 20px;
+   }
 
     .site-logo {
-      /* content: url("https://drive.google.com/uc?export=view&id=1f7pp0Nyq0z3Ikq_s1FVNOtDOGOTJ3pvE");  */
       content: url("https://www.huana-nbp.go.th/index/add_file/qOv0r0dTue83729.png");
-      /* content: url("https://semicon.github.io/img/LOGOKRUCHIANgrow.png");  */
-
       display: inline-block;
       margin-top: 20px;
       width: auto;
@@ -92,21 +87,21 @@
     }
 
     .wrapper {
-      background: #dff;
-      width: 350px;
-      padding: 20px;
-      border: 1px solid #999;
-      border-radius: 5px;
-      box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+    background: rgba(221, 255, 255, 0.7); /* สีพื้นหลังที่มีความโปร่งแสง */
+    width: 350px;
+    padding: 20px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
     }
 
     /** #### digital clock #### **/
     .clock {
       font-family: Digital dream Fat;
       font-size: 28px;
-      color: cyan;
+      color: #00f6fa;
       letter-spacing: 3px;
-      text-shadow: 1px 1px 2px teal, 0 0 25px green, 0 0 5px darkturquoise;
+      text-shadow: 1px 1px 2px teal, 0 0 25px green, 0 0 5px #00fbff;
       min-width: 98%;
       background: #444;
       padding: 5px 0px 5px 10px;
@@ -122,10 +117,11 @@
 
 <!--  ******* Time Tracker HTML Body ***********  -->
 
-<body>
+<body style="color: #444; background-color: white; padding: 20px; border: 2px solid white; box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.5);">
   <div class="wrapper text-center" style="max-width:350px">
     <div class="site-logo text-center"></div>
-    <h5>ระบบลงเวลาออนไลน์ อบต.หัวนา</h5>
+    <h5>ระบบลงเวลาออนไลน์ อบต.หัวนา </h5>
+    <h2>สำหรับผู้บริหาร</h2>
 
     <span id="MyClockDisplay" class="clock mt-3" onload="showTime()"></span>
 
@@ -137,7 +133,6 @@
           <input id="employee" class="text-center"> <br>
         </div>
       </div>
-
       <div class="row mt-4">
         <div class="form-group col">
           <label for="lblinfo"><i class="fas fa-book-reader"></i> หมายเหตุ:ประชุม/กิจกรรม อื่นๆ</label>
@@ -176,10 +171,11 @@
 
   <!--  ******* Javascript ***********  -->
   <script>
-    var scripturl ='https://script.google.com/macros/s/AKfycby28GtWjfSceGmIGRHXxMx9r3qacmZ3zN128hnmVbIoV57PmkFKBg5vkQTRe22Y10EO/exec'
-    var owner = 'องค์การบริหารส่วนตำบลหัวนา';
-
-
+    var scripturl = 'https://script.google.com/macros/s/AKfycbx7KZiDtDQmYcdT9ki_-UX8FcJmirUtOdmoMd9O-5eOgJYGgIjn7pz9aCsCkTzGw5Rd/exec'
+    
+    // ข้อความที่คุณต้องการแสดง
+    var owner = 'องค์การบริหารส่วนตำบลหัวนา\nProgram developed by: Songphon';
+    
     /** ******* โหลดข้อมูลพนังงานมาแสดงในแถบเลือกรายการ ******* **/
     var profile, gps
     $.when(getlocation()).done(function (res) {
@@ -191,23 +187,13 @@
       $('#clockin').click(() => ClockIn())
       $('#clockout').click(() => ClockOut())
       liff.init({
-        liffId:'2006438597-GRpglg81',
+        liffId: '1657338043-y6PQlKBn',
         withLoginOnExternalBrowser: true
       })
       liff.ready.then(() => {
-    profile = liff.getDecodedIDToken()
-    console.log(profile);
-        if (profile && profile.name) { // ตรวจสอบว่า profile และ profile.name มีค่า
-            initApp() 
-        } else {
-            $('#message').html('เกิดข้อผิดพลาดในการดึงข้อมูลโปรไฟล์');
-            document.getElementById('message').className = 'alert alert-danger';
-        }
-        }).catch(err => { // เพิ่ม catch() เพื่อดักจับ error
-            console.error(err);
-            $('#message').html('เกิดข้อผิดพลาดในการล็อกอิน');
-            document.getElementById('message').className = 'alert alert-danger';
-        });
+        profile = liff.getDecodedIDToken()
+        initApp()
+      })
 
       function initApp() {
         document.getElementById('message').innerText = owner;
@@ -376,6 +362,13 @@
                   lon: gps[1],
                 }
               })
+              // $.ajax({
+              //   method: 'POST',
+              //   url: scripturl,
+              //   data: {
+              //     opt: 'total',
+              //   }
+              // })
 
               setTimeout(() => {
                 var message = res.employee + '<br> บันทึกเวลากลับ ' + res.return_date;
@@ -470,6 +463,15 @@
         dot = document.textContent = '\xa0';
       }
 
+      //var session = "AM";
+
+      // if (h >= 12) {
+      //   h = h - 12;
+      //   session = "PM";
+      //   if (h == 0) {
+      //   h = 12;
+      //   }          
+      // }
 
       h = h < 10 ? "0" + h : h;
       m = m < 10 ? "0" + m : m;
